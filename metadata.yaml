@@ -2,7 +2,7 @@ name: astrbot_plugin_key_guard
 desc: API 密钥拦截卫士 — 在消息发往 LLM 之前检测疑似密钥并截停
 short_desc: 防 API Key 误发
 author: AstrBot User
-version: v1.0.0
+version: v1.0.1
 repo: https://github.com/shuiyind/astrbot_plugin_key_guard
 support_platforms:
   - telegram

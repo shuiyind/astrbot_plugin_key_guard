@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.0.1 (2026-06-02)
+
+### Added
+- 新增 Google Gemini (`AIzaSy`)、Groq (`gsk_`)、Perplexity (`pplx-`) 密钥格式支持
+- 新增宽松 sk- 匹配（20位+，含连字符/下划线）覆盖更多兼容厂商
+
+### Changed
+- README 厂商支持表从 3 家扩展至 6 家
+
 ## v1.0.0 (2026-06-02)
 
 ### Features

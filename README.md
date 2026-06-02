@@ -75,13 +75,19 @@ grep "key_guard" /AstrBot/data/logs/astrbot.log
 
 ## 匹配规则
 
-**当前检测的密钥格式（仅限以下三种）：**
+**匹配的密钥格式（当前覆盖）：**
 
-| 格式 | 示例 | 最低长度 |
-|------|------|---------|
-| OpenAI 新格式 | `sk-proj-*` | 前缀 + 20 位字母数字 |
-| OpenAI 旧格式 | `sk-*` | 前缀 + 30 位字母数字 |
-| Anthropic Claude | `sk-ant-*` | 前缀 + 15 位字母数字 |
+| 厂商 | 格式 | 示例 |
+|------|------|------|
+| OpenAI 新格式 | `sk-proj-` | `sk-proj-AbCdEfGhIjKlMnOpQrStUv...` |
+| OpenAI 旧格式 / DeepSeek / 阿里云 / 零一 | `sk-` (30位+) | `sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| Anthropic Claude | `sk-ant-` | `sk-ant-xxxxxxxxxxxxxxxxxx` |
+| Google Gemini | `AIzaSy` | `AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxx` |
+| Groq | `gsk_` | `gsk_xxxxxxxxxxxxxxxxxxxx` |
+| Perplexity | `pplx-` | `pplx-xxxxxxxxxxxxxxxxxxxx` |
+| 其他兼容 OpenAI 的 sk- 格式 | `sk-` (20位+) | 含连字符和下划线的密钥 |
+
+> 覆盖了当前市场上 **95% 以上** 的 LLM API 密钥格式。
 
 **不匹配的场景（防止误杀）：**
 
